@@ -9,6 +9,7 @@ angular
         'ngTable',
         'directives',
         'login',
+        'registration'
     ]) .config(['$urlRouterProvider','$stateProvider', urlRouterProvider]);
 
     function urlRouterProvider($urlRouterProvider, $stateProvider) {
