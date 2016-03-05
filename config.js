@@ -1,3 +1,3 @@
 window.__config = {
-  'apiEndPoint' : 'http://localhost:3001' // server endpoint
+  'apiEndPoint' : 'http://192.168.10.65:3001' // server endpoint
 };
