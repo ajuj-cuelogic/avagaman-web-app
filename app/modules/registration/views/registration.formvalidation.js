@@ -13,7 +13,6 @@ recognition.interimResults=!0;
 }
 */
 var count = 0;
-
 recognition.onresult = function(n) {
 							var i="";
 							o=0;
