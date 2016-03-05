@@ -11,9 +11,11 @@ angular
         'directives',
 
         'login',
-        'registration',
+        'registration',  
         'dashboard',
+        'history',
         'employees'
+
     ]).config(['$urlRouterProvider', '$stateProvider', urlRouterProvider])
     .run(['$rootScope', '$state', 'localStorageService', handleRoutingValidation]);
 
