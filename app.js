@@ -9,8 +9,7 @@ angular
         'ngTable',
         'directives',
         'login',
-    ]) .config(['$urlRouterProvider','$stateProvider', urlRouterProvider])
-    .run(['$rootScope', '$state', 'localStorageService']);
+    ]) .config(['$urlRouterProvider','$stateProvider', urlRouterProvider]);
 
     function urlRouterProvider($urlRouterProvider, $stateProvider) {
         $urlRouterProvider.otherwise('/login');
@@ -31,4 +30,4 @@ angular
             }
         });
 }
-    
+

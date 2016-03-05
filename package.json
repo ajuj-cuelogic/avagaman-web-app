@@ -18,5 +18,10 @@
   "homepage": "https://github.com/ajuj-cuelogic/avagaman-web-app#readme",
   "dependencies": {
     "bower": "^1.7.7"
+  },
+  "scripts": {
+    "postinstall": "bower install",
+    "prestart": "npm install",
+    "start": "http-server -a 192.168.10.152 -p 4002 -c-1"
   }
 }
