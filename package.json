@@ -1,0 +1,22 @@
+{
+  "name": "avagaman-web-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajuj-cuelogic/avagaman-web-app.git"
+  },
+  "author": "Shital UD Agarwal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ajuj-cuelogic/avagaman-web-app/issues"
+  },
+  "homepage": "https://github.com/ajuj-cuelogic/avagaman-web-app#readme",
+  "dependencies": {
+    "bower": "^1.7.7"
+  }
+}
