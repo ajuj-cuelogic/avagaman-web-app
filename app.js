@@ -7,11 +7,28 @@ angular
         'ngAnimate',
         'ngLodash',
         'ngTable',
+        'directives',
         'login',
-    ]) .config(['$urlRouterProvider', urlRouterProvider])
-    .run(['$rootScope', '$state', 'localStorageService', 'Permissions']);
+    ]) .config(['$urlRouterProvider','$stateProvider', urlRouterProvider])
+    .run(['$rootScope', '$state', 'localStorageService']);
 
     function urlRouterProvider($urlRouterProvider, $stateProvider) {
         $urlRouterProvider.otherwise('/login');
+        $stateProvider
+        .state('base', {
+            url: '',
+            abstract: true,
+            views: {
+                'header': {
+                    templateUrl: 'app/components/directives/views/primary-header.html',
+                },
+                'sidebar': {
+                    templateUrl: 'app/components/directives/views/primary-sidebar.html',
+                },
+                'footer': {
+                    templateUrl: 'app/components/directives/views/footer.html',
+                },
+            }
+        });
 }
     
