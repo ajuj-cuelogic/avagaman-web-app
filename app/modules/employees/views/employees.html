@@ -1,0 +1,37 @@
+<!-- Content Wrapper. Contains page content -->
+<div class="wrapper">
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+            Employees
+            <small>list</small>
+          </h1>
+            <ol class="breadcrumb">
+                <li><a href=""><i class="fa fa-dashboard"></i> Employees</a></li>
+            </ol>
+        </section>
+        <!-- Main content -->
+        <section class="content">
+            <div class="box-tools pull-right form-group">
+                <div class="has-feedback">
+                    <input type="text" ng-model="searchFilter.search" class="form-control input-sm" placeholder="Search...">
+                    <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                </div>
+            </div>
+            <!-- /.box-tools -->
+            <table ng-table="tableParams" class="table table-condensed table-bordered table-striped" show-filter="true">
+                <tr ng-repeat="user in $data">
+                    <td data-title="'Name'" sortable="'firstName'">{{user.firstName}} {{user.lastName}}</td>
+                    <td data-title="'username'" sortable="'username'">{{user.username}}</td>
+                    <td class="text-center" data-title="'Status'"><i class="fa fa-circle" ng-class="{true: 'green-color', false: 'red-color' } [(user.logState == 1)]"></i></td>
+
+                    <td data-title="'Action'">
+                        <a href="" ng-click="">Notify</a>
+                    </td>
+                </tr>
+            </table>
+        </section>
+        <!-- /.content -->
+    </div>
+</div>

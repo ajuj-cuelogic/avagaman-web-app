@@ -44,13 +44,8 @@
                         </div>
                         <ul class="list-group today-history-box">
                             <li class="list-group-item " ng-repeat="history in userTodayHistory">
-                                <img src="app/assets/images/{{ (history.logState ? 'green-arrow.png' : 'red-arrow.png') }}" alt="user image" class="arrow-size offline">{{(history.logState ? 'Check-In': 'Check-Out')}} at {{history.logTime | date : 'shortTime' }}
+                                <img ng-src="app/assets/images/{{ (history.logState ? 'green-arrow.png' : 'red-arrow.png') }}" alt="user image" class="arrow-size offline">{{(history.logState ? 'Check-In': 'Check-Out')}} at {{history.logTime | date : 'shortTime' }}
                             </li>
-                            <!-- <li class="list-group-item "><img src="app/assets/images/green-arrow.png" alt="user image" class="arrow-size offline">Checked-In at 11.00 AM</li>
-                            <li class="list-group-item "><img src="app/assets/images/red-arrow.png" alt="user image" class="arrow-size offline">Checked-Out at 12.15 pm</li>
-                            <li class="list-group-item "><img src="app/assets/images/green-arrow.png" alt="user image" class="arrow-size offline">Checked-In at 1.00 PM</li>
-                            <li class="list-group-item "><img src="app/assets/images/red-arrow.png" alt="user image" class="arrow-size offline">Checked-Out at 1.30 PM</li>
-                            <li class="list-group-item "><img src="app/assets/images/green-arrow.png" alt="user image" class="arrow-size offline">Checked-In at 2.30 PM</li> -->
                         </ul>
                         <!-- /.chat -->
                     </div>
