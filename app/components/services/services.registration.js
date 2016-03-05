@@ -12,11 +12,19 @@ function registrationService($http, config) {
     return registrationService;
 
     function registration(employeedata) {
+        var data ={
+                        "firstName": employeedata.firstName,
+                        "lastName": employeedata.lastName,
+                        "gender": employeedata.gender,
+                        "username": employeedata.username,
+                        "password": employeedata.password,
+                        "type": "user"
+                    };
 		return $http({
             method: "POST",
             url: config.apiEndPoint + '/user/signup',
             dataType: 'json',
-            data: employeedata
+            data: data
         });
 	}
 

@@ -15,27 +15,26 @@ recognition.interimResults=!0;
 var count = 0;
 
 recognition.onresult = function(n) {
-									var i="";
-									o=0;
-									$.each(n.results,function(n,t){
-										if(t.isFinal && o<t[0].confidence)
-											i=t[0].transcript;
+							var i="";
+							o=0;
+							$.each(n.results,function(n,t){
+								if(t.isFinal && o<t[0].confidence)
+									i=t[0].transcript;
 
-									});
-									//console.log("count="+count);
-									if(i.length!=0){
-										if(registeration_array[count][0] == "gender") {
-											i = i.toLowerCase();
-											if(i == "mail" || i == "gmail") i = "male";
-										} else if(registeration_array[count][0] == "email") {
-											i = i.replace(/\s/g,'');
-											i = i.toLowerCase();
-										}
-										$('#registrationForm').find('.input-voice:eq('+count+')').val(i);
-										stop();
-									}
-									//count++;
-								};
+							});
+							i = $.trim(i);
+							if(i.length!=0) {
+								if(registeration_array[count][0] == "gender") {
+									i = i.toLowerCase();
+									if(i == "mail" || i == "gmail") i = "male";
+								} else if(registeration_array[count][0] == "username") {
+									i = i.replace(/\s/g,'');
+									i = i.toLowerCase();
+								}
+								$('#registrationForm').find('.input-voice:eq('+count+')').val(i);
+								stop();
+							}
+						};
 
 $(document).ready(function(){
 	nextField();
