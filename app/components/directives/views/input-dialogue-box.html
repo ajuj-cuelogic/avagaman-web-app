@@ -1,0 +1,25 @@
+<!-- Modal -->
+<div class="modal fade" id="alertMessage" role="dialog">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">{{headerText}}</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    {{displayMessage}}
+                    <input type="text" class="form-control message-input-box" id="inputEmail3" placeholder="Message" ng-model="userMessage">
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default cancel-btn" data-dismiss="modal" ng-if="!customButtons.length">OK</button>
+                <span ng-if="customButtons.length">
+                  <button type="button" class="{{buttonDetail.class}}" ng-repeat="buttonDetail in customButtons" data-dismiss="modal" ng-click="buttonDetail.onclick(userMessage)">
+                    {{buttonDetail.button_text | capitalize}}
+                  </button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
