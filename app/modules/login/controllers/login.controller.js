@@ -6,17 +6,21 @@ angular
 
 function LoginCtrl($scope, $rootScope, $state, loginService) {
     $scope.credentials = {};
-   console.log($scope.credentials)
-     $scope.login = function (){
-   console.log($scope.credentials)
 
-         loginService.login($scope.credentials)
-         .then(function(response) {          
-            console.log(response);
+    $scope.login = function() {
+        if ($scope.credentials.username !== '' && $scope.credentials.password !== '') {
+            loginService.login($scope.credentials)
+                .then(function(response) {
+                    if (response.status == 200) {
 
-          }, function(rejected){
-                  $scope.error="Invalid username/password";
-          })
-  };
+                        $state.transitionTo('base.dashboard');
+                    }
+
+                }, function(rejected) {
+                    $rootScope.errorOccured = true;
+                    $rootScope.errorMessage = "Invalid username/password";
+                })
+        }
+    };
 
 }

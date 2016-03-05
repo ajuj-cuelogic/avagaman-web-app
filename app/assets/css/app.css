@@ -35,3 +35,7 @@
 .arrow-size {
     height: 35px;
 }
+
+.content-wrapper {
+    min-height: 600px
+}

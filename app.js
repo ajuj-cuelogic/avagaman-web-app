@@ -7,8 +7,12 @@ angular
         'ngAnimate',
         'ngLodash',
         'ngTable',
+
         'directives',
+
         'login',
+        'dashboard'
+
     ]) .config(['$urlRouterProvider','$stateProvider', urlRouterProvider]);
 
     function urlRouterProvider($urlRouterProvider, $stateProvider) {

@@ -23,6 +23,7 @@
 
     <div ui-view="header"></div>
     <div ui-view="sidebar"></div>
+    <error-message timeout-secs="3000"></error-message>
 
     <div ui-view></div>
     <div ui-view="footer"></div>
@@ -37,19 +38,27 @@
     <script src="bower_components/ng-table/dist/ng-table.js"></script>
      <script src="app/assets/js/custom.js"></script>
 
-      <!-- Load providers before services -->
+    <!-- Load providers before services -->
     <script src="app/components/providers/providers.index.js"></script>
     <script src="app/components/providers/providers.config.js"></script>
+
     <!-- Load services before modules -->
     <script src="app/components/services/services.localStorage.js"></script>
     <script src="app/components/services/services.login.js"></script>
+
     <!-- Load directives before modules -->
     <script src="app/components/directives/directives.index.js"></script>
+    <script src="app/components/directives/directives.alertmessage.js"></script>
 
-         <!-- Login module-->
+    <!-- Login module-->
     <script src="app/modules/login/login.index.js"></script>
     <script src="app/modules/login/controllers/login.controller.js"></script>
     <script src="app/modules/login/login.route.js"></script>
+
+    <!-- Dashboard module-->
+    <script src="app/modules/dashboard/dashboard.index.js"></script>
+    <script src="app/modules/dashboard/controllers/dashboard.controller.js"></script>
+    <script src="app/modules/dashboard/dashboard.route.js"></script>
 
      <!-- Main module -->
     <script src="app.js"></script>
