@@ -11,9 +11,11 @@ function LoginCtrl($scope, $rootScope, $state, loginService, localStorageService
             loginService.login($scope.credentials)
                 .then(function(response) {
                     if (response.status == 200) {
+                      console.log(response)
                       localStorageService.set('__t', response.data.data.__s);
                       localStorageService.set('__i', response.data.data._id);
-                      localStorageService.set('__u', response.data.data.username);
+                      localStorageService.set('__u', response.data.data.user.username);
+                      localStorageService.set('__l', response.data.data.user.logState);
                       $state.transitionTo('base.dashboard');
                     }
 

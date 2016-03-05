@@ -39,3 +39,9 @@
 .content-wrapper {
     min-height: 600px
 }
+
+.today-history-box
+{
+    max-height: 287px;
+    overflow-y: scroll;
+}

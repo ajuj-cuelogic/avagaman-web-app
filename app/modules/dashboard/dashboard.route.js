@@ -16,7 +16,10 @@ function stateProvider($stateProvider) {
                 }
             },
             resolve: {
-
+                dashboardDetails: function(dashboardService, localStorageService) {
+                    var userId = localStorageService.get('__i');
+                    return dashboardService.getDashboardData(userId);
+                }
             }
         });
 
