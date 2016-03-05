@@ -1,8 +1,8 @@
 var registeration_array = [
+	['firstName'],
+	['lastName'],
 	['username'],
-	['email'],
 	['gender'],
-	['age'],
 ];
 recognition=new webkitSpeechRecognition;
 recognition.continuous=!0;
@@ -22,7 +22,6 @@ recognition.onresult = function(n) {
 											i=t[0].transcript;
 
 									});
-									console.log(i);
 									//console.log("count="+count);
 									if(i.length!=0){
 										if(registeration_array[count][0] == "gender") {
@@ -32,7 +31,7 @@ recognition.onresult = function(n) {
 											i = i.replace(/\s/g,'');
 											i = i.toLowerCase();
 										}
-										$('form').find('.input-xlarge:eq('+count+')').val(i);
+										$('#registrationForm').find('.input-voice:eq('+count+')').val(i);
 										stop();
 									}
 									//count++;
