@@ -5,16 +5,11 @@ angular
     .controller('dashboardCtrl', ['$scope', '$filter', '$rootScope', 'dashboardDetails', 'NgTableParams', 'localStorageService', 'dashboardService', dashboardCtrl]);
 
 function dashboardCtrl($scope, $filter, $rootScope, dashboardDetails, NgTableParams, localStorageService, dashboardService) {
-    console.log(dashboardDetails);
     $scope.dashboardDetails = dashboardDetails;
     $scope.userDetials = dashboardDetails.data.data.user;
     $scope.userOldHistory = dashboardDetails.data.data.userOldHistory;
-    $scope.userTodayHistory = dashboardDetails.data.data.userTodayHistory;
+    $scope.userTodayHistory = dashboardDetails.data.data.userTodayHistory.reverse();
     $scope.firstLoggedInData = _.minBy(dashboardDetails.data.data.userTodayHistory, function(o) { return o.logTime; });
-    console.log($scope.firstLoggedInData);
-    console.log($scope.userOldHistory);
-    console.log($scope.userDetials);
-    console.log($scope.userTodayHistory);
 
     $scope.searchFilter = {
         search: ''
