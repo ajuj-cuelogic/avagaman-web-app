@@ -2,21 +2,26 @@
 
 angular
     .module('login')
-    .controller('LoginCtrl', ['$scope', '$rootScope', '$state', 'loginService', LoginCtrl]);
+    .controller('LoginCtrl', ['$scope', '$rootScope', '$state', 'loginService', 'localStorageService', LoginCtrl]);
 
-function LoginCtrl($scope, $rootScope, $state, loginService) {
+function LoginCtrl($scope, $rootScope, $state, loginService, localStorageService) {
     $scope.credentials = {};
-   console.log($scope.credentials)
-     $scope.login = function (){
-   console.log($scope.credentials)
+    $scope.login = function() {
+        if ($scope.credentials.username !== '' && $scope.credentials.password !== '') {
+            loginService.login($scope.credentials)
+                .then(function(response) {
+                    if (response.status == 200) {
+                      localStorageService.set('__t', response.data.data.__s);
+                      localStorageService.set('__i', response.data.data._id);
+                      localStorageService.set('__u', response.data.data.username);
+                      $state.transitionTo('base.dashboard');
+                    }
 
-         loginService.login($scope.credentials)
-         .then(function(response) {          
-            console.log(response);
-
-          }, function(rejected){
-                  $scope.error="Invalid username/password";
-          })
-  };
+                }, function(rejected) {
+                    $rootScope.errorOccured = true;
+                    $rootScope.errorMessage = "Invalid username/password";
+                })
+        }
+    };
 
 }

@@ -22,6 +22,6 @@
   "scripts": {
     "postinstall": "bower install",
     "prestart": "npm install",
-    "start": "http-server -a 192.168.10.248 -p 4002 -c-1"
+    "start": "http-server -a 192.168.10.152 -p 4002 -c-1"
   }
 }
