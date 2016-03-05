@@ -1,0 +1,53 @@
+<div class="login-box" style="border:1px solid #D3D3D3;">
+    <div class="login-logo">
+        <a><b>Avagaman</b></a>
+    </div>
+    <div class="login-box-body">
+        <p class="login-box-msg">Registeration</p>
+        <form name="registrationForm" id="registrationForm" ng-submit="registration()" novalidate>
+            <div  class="form-group has-feedback" ng-class="{ 'has-error' : registrationForm.firstName.$invalid && registrationForm.firstName.$dirty }">
+                      <label>Firstname</label>
+                      <input type="text" class="form-control input-voice" placeholder="Enter Firstname..." name="firstName" ng-model="employeedata.firstName" required autofocus>
+            </div>
+            <div  class="form-group has-feedback" ng-class="{ 'has-error' : registrationForm.lastName.$invalid && registrationForm.lastName.$dirty }">
+                      <label>Lastname</label>
+                      <input type="text" class="form-control input-voice" placeholder="Enter Lastname..." name="lastName" ng-model="employeedata.lastName" required autofocus>
+            </div>
+            <div class="form-group has-feedback" ng-class="{ 'has-error' : registrationForm.gender.$invalid && registrationForm.gender.$dirty }">
+                      <label>Gender</label>
+                      <select class="form-control input-voice" name="gender" ng-model="employeedata.gender" required autofocus>
+                        <option value="">Select</option>
+                        <option value="female">Female</option>
+                        <option value="male">Male</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+            <div class="form-group has-feedback" ng-class="{ 'has-error' : registrationForm.username.$invalid && registrationForm.username.$dirty }">
+                 <label>Username</label>
+                <input type="text" class="form-control input-voice" placeholder="Username" name="username" ng-model="employeedata.username" required autofocus>@cuelogic.co.in
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+
+            <div class="form-group has-feedback" ng-class="{ 'has-error' : registrationForm.password.$invalid && registrationForm.password.$dirty }">
+                 <label>Password</label>
+                <input type="password" name="password" class="form-control" placeholder="Password" ng-model="employeedata.password" required>
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+
+             <div class="form-group has-feedback" ng-class="{ 'has-error' : registrationForm.confirmPassword.$invalid && registrationForm.confirmPassword.$dirty }">
+                <label>Confirm Password</label>
+                <input type="password" name="confirmPassword" class="form-control" placeholder="Confirm Password" ng-model="employeedata.confirmPassword" required>
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <button type="submit" ng-disabled="registrationForm.$invalid" class="btn btn-primary btn-block btn-flat">Register</button>
+                </div>
+            </div>
+        </form>
+      
+    </div>
+
+</div>
+

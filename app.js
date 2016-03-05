@@ -7,12 +7,10 @@ angular
         'ngAnimate',
         'ngLodash',
         'ngTable',
-
         'directives',
-
         'login',
+        'registration',  
         'dashboard'
-
     ]).config(['$urlRouterProvider', '$stateProvider', urlRouterProvider])
     .run(['$rootScope', '$state', 'localStorageService', handleRoutingValidation]);
 
