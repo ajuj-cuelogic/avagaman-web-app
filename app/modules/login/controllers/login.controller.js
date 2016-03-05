@@ -25,5 +25,10 @@ function LoginCtrl($scope, $rootScope, $state, loginService, localStorageService
                 })
         }
     };
+    $scope.logout = function() {
+         localStorageService.clearAll();
+         $state.transitionTo('login');
+    };
+
 }
 
