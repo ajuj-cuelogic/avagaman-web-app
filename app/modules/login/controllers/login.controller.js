@@ -25,5 +25,5 @@ function LoginCtrl($scope, $rootScope, $state, loginService, localStorageService
                 })
         }
     };
-
 }
+
