@@ -13,11 +13,12 @@ angular
         'login',
         'dashboard'
 
-    ]) .config(['$urlRouterProvider','$stateProvider', urlRouterProvider]);
+    ]).config(['$urlRouterProvider', '$stateProvider', urlRouterProvider])
+    .run(['$rootScope', '$state', 'localStorageService', handleRoutingValidation]);
 
-    function urlRouterProvider($urlRouterProvider, $stateProvider) {
-        $urlRouterProvider.otherwise('/login');
-        $stateProvider
+function urlRouterProvider($urlRouterProvider, $stateProvider) {
+    $urlRouterProvider.otherwise('/login');
+    $stateProvider
         .state('base', {
             url: '',
             abstract: true,
@@ -35,3 +36,18 @@ angular
         });
 }
 
+function handleRoutingValidation($rootScope, $state, localStorageService, Permissions) {
+
+    $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+
+        var state = toState.name,
+            fromState = fromState.name;
+
+        if ((localStorageService.get('__t') == null) && (toState.name !== 'login') && (toState.name !== 'registration')) {
+            event.preventDefault();
+            $state.transitionTo('login');
+        } else if (localStorageService.get('__t') && (toState.name == 'login')) {
+            $state.transitionTo('base.dashboard');
+        }
+    });
+}

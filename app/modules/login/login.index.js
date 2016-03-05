@@ -1,1 +1,1 @@
-angular.module('login', ['loginService']);
+angular.module('login', ['loginService', 'localStorageService']);
