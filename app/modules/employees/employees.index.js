@@ -1,1 +1,1 @@
-angular.module('employees', ['employeesService']);
+angular.module('employees', ['employeesService', 'stringFilter', 'localStorageService']);

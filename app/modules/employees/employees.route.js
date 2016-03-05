@@ -13,8 +13,10 @@ function stateProvider($stateProvider) {
                 }
             },
             resolve: {
-                employeesList: function(employeesService) {
-                    return employeesService.getEmployeesUserList();
+                employeesList: function(employeesService, localStorageService) {
+                    var userId = localStorageService.get("__i");
+                    console.log(userId)
+                    return employeesService.getEmployeesUserList(userId);
                 }
             }
         });

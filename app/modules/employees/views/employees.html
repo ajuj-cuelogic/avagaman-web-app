@@ -2,6 +2,7 @@
 <div class="wrapper">
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
+        <input-dialogue-box display-message="{{message}}" custom-buttons="customButtons" header-text="{{headerText}}" show-input-box="{{showInputBox}}"></input-dialogue-box>
         <section class="content-header">
             <h1>
             Employees
@@ -26,8 +27,8 @@
                     <td data-title="'username'" sortable="'username'">{{user.username}}</td>
                     <td class="text-center" data-title="'Status'"><i class="fa fa-circle" ng-class="{true: 'green-color', false: 'red-color' } [(user.logState == 1)]"></i></td>
 
-                    <td data-title="'Action'">
-                        <a href="" ng-click="">Notify</a>
+                    <td class="text-center" data-title="'Action'">
+                        <a href="" ng-click="showConfirmationPopup(user)">Notify</a>
                     </td>
                 </tr>
             </table>

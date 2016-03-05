@@ -47,7 +47,13 @@
 }
 .red-color {
     color: red;
+    font-size: 10px;
 }
 .green-color {
     color:  green;
+    font-size: 10px;
+}
+
+.message-input-box {
+    margin: 20px 0;
 }
