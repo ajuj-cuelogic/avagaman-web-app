@@ -13,21 +13,24 @@
                 <input type="password" name="password" class="form-control" placeholder="Password" ng-model="credentials.password" required>
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
-            <div class="row">
+            <div class="row text-center">
                 <!-- /.col -->
                 <div class="col-md-4 col-md-offset-4">
                     <button type="submit" ng-disabled="loginForm.$invalid" class="btn btn-primary btn-block btn-flat">Sign In</button>
                 </div>
                 <!-- /.col -->
             </div>
-            <div class="form-group" >
-                Not Registered? Please <a href="#/registration">Sign Up</a>                 
-            </div>
-        </form>
 
+        </form>
          <div class="social-auth-links text-center">
             <p>- OR -</p>
             <google-plus-signin clientid="1079684174164-tkrtgu0tfcuon629egklj7m18k98m9i9.apps.googleusercontent.com"></google-plus-signin>
+        </div>
+        <div class="social-auth-links text-center">
+            <p>- OR -</p>
+            <div class="form-group" >
+                Not Registered? Please <a href="#/registration">Sign Up</a>
+            </div>
         </div>
     </div>
 </div>

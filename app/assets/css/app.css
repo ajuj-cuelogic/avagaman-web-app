@@ -75,3 +75,25 @@
     max-height: 300px;
     overflow-y: scroll;
 }
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    border: none;
+}
+.table-bordered {
+    border: solid 1px #222D32;
+}
+.table > thead > tr:last-child > th {
+    border-bottom: solid 1px #222D32;
+    border-right: solid 1px #222D32;
+}
+.table > thead > tr > th {
+    border-right: solid 1px #222D32;
+}
+.table > thead > tr > th:last-child {
+    border-right: none;
+}
+
+.table > tbody > tr > td {
+    border-bottom: solid 1px #222D32;
+    border-right: solid 1px #222D32;
+}

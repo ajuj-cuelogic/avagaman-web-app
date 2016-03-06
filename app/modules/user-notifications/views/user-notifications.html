@@ -20,7 +20,12 @@
                             <i class="fa fa-bell"></i>
                             <h3 class="box-title">Notifications</h3>
                         </div>
-                        <ul class="list-group">
+                        <div class="text-center" ng-if="!userNotifications.length" style="padding-bottom: 20px">
+                            You dont have any notifications!!
+
+
+                        </div>
+                        <ul class="list-group" ng-if="userNotifications.length">
                             <li class="list-group-item " ng-repeat="notification in userNotifications">
                                 <div class="box-comment">
                                     <!-- User image -->
