@@ -17,14 +17,16 @@
                 </div>
             </div>
             <!-- /.box-tools -->
-            <table ng-if="previousHistory.length" ng-table="tableParams" class="table table-condensed table-bordered table-striped" show-filter="true">
-                <tr ng-repeat="history in $data">
-                    <td class="text-center" data-title="'Date'" sortable="'checkedInTime'">{{history.checkedInTime | date:"MM-dd-yyyy"}}</td>
-                    <td class="text-center" data-title="'Checked In Time'" sortable="'checkedInTime'">{{history.checkedInTime | date: 'shortTime'}}</td>
-                    <td class="text-center" data-title="'Checked Out Time'" sortable="'checkedOutTime'">{{history.checkedOutTime | date: 'shortTime'}}</td>
-                    <td class="text-center" data-title="'Total Worked Time'"> {{getTimeDiffernce(history.checkedInTime, history.checkedOutTime)}} </td>
-                </tr>
-            </table>
+            <div ng-if="previousHistory.length">
+                <table ng-table="tableParams" class="table table-condensed table-bordered table-striped" show-filter="true">
+                    <tr ng-repeat="history in $data">
+                        <td class="text-center" data-title="'Date'" sortable="'checkedInTime'">{{history.checkedInTime | date:"MM-dd-yyyy"}}</td>
+                        <td class="text-center" data-title="'Checked In Time'" sortable="'checkedInTime'">{{history.checkedInTime | date: 'shortTime'}}</td>
+                        <td class="text-center" data-title="'Checked Out Time'" sortable="'checkedOutTime'">{{history.checkedOutTime | date: 'shortTime'}}</td>
+                        <td class="text-center" data-title="'Total Worked Time'"> {{getTimeDiffernce(history.checkedInTime, history.checkedOutTime)}} </td>
+                    </tr>
+                </table>
+            </div>
         </section>
         <!-- /.content -->
     </div>
