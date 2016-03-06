@@ -15,20 +15,17 @@
         <section class="content">
             <div class="box-tools pull-right form-group">
                 <div class="has-feedback">
-                    <input type="text" ng-model="searchFilter.search" class="form-control input-sm" placeholder="Search...">
+                    <!-- <input type="text" ng-model="searchFilter.search" class="form-control input-sm" placeholder="Search..."> -->
                     <span class="glyphicon glyphicon-search form-control-feedback"></span>
                 </div>
             </div>
             <!-- /.box-tools -->
             <table ng-table="tableParams" class="table table-condensed table-bordered table-striped" show-filter="true">
-                <tr ng-repeat="user in $data">
-                    <td data-title="'Name'" sortable="'name'">{{user.name}}</td>
-                    <td data-title="'email'" sortable="'email'">{{user.email}}</td>
-                    <td data-title="'group'">{{user.group}}</td>
-                    <td data-title="'active'">{{user.active}}</td>
-                    <td data-title="'Action'">
-                        <a href="" ng-click="editUserInfo(user)">Notify</a>
-                    </td>
+                <tr ng-repeat="history in $data">
+                    <td class="text-center" data-title="'Date'" sortable="'checkedInTime'">{{history.checkedInTime | date:"MM-dd-yyyy"}}</td>
+                    <td class="text-center" data-title="'Checked In Time'" sortable="'checkedInTime'">{{history.checkedInTime | date: 'shortTime'}}</td>
+                    <td class="text-center" data-title="'Checked Out Time'" sortable="'checkedOutTime'">{{history.checkedOutTime | date: 'shortTime'}}</td>
+                    <td class="text-center" data-title="'Total Worked Time'"> {{getTimeDiffernce(history.checkedInTime, history.checkedOutTime)}} </td>
                 </tr>
             </table>
         </section>

@@ -42,8 +42,9 @@
 
 .today-history-box
 {
-    max-height: 287px;
+        max-height: 325px;
     overflow-y: scroll;
+    min-height: 325px;
 }
 .red-color {
     color: red;
@@ -60,4 +61,10 @@
 
 .notify-image {
     margin-left: 40px;
+}
+
+.weak-history-list {
+    min-height: 300px;
+    max-height: 300px;
+    overflow-y: scroll;
 }

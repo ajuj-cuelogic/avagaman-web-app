@@ -1,3 +1,5 @@
+
+if((window.location.href).toLowerCase().indexOf("registration") > 0) {
 var registeration_array = [
 	['firstName'],
 	['lastName'],
@@ -62,4 +64,5 @@ su.pitch=.1;
 su.pitch=.1;
 su.onend=function(){
 	recognition.start();
+}
 }

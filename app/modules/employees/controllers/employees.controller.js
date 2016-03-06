@@ -19,6 +19,7 @@ function employeesCtrl($scope, $rootScope, employeesList, $filter, $state, NgTab
         getData: function($defer, params) {
 
             $scope.data = params.sorting() ? $filter('orderBy')($scope.employeesDetials, params.orderBy()) : $scope.employeesDetials;
+            $scope.data = params.filter() ? $filter('filter')($scope.data, params.filter().search) : $scope.data;
 
             $defer.resolve($scope.data);
         }

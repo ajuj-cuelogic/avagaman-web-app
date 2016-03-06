@@ -7,6 +7,7 @@ angular
         'ngAnimate',
         'ngLodash',
         'ngTable',
+        'directive.g+signin',
 
         'directives',
 

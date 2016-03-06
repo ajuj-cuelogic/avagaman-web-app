@@ -11,12 +11,12 @@ function LoginCtrl($scope, $rootScope, $state, loginService, localStorageService
             loginService.login($scope.credentials)
                 .then(function(response) {
                     if (response.status == 200) {
-                      console.log(response)
-                      localStorageService.set('__t', response.data.data.__s);
-                      localStorageService.set('__i', response.data.data._id);
-                      localStorageService.set('__u', response.data.data.user.username);
-                      localStorageService.set('__l', response.data.data.user.logState);
-                      $state.transitionTo('base.dashboard');
+                        console.log(response)
+                        localStorageService.set('__t', response.data.data.__s);
+                        localStorageService.set('__i', response.data.data._id);
+                        localStorageService.set('__u', response.data.data.user.username);
+                        localStorageService.set('__l', response.data.data.user.logState);
+                        $state.transitionTo('base.dashboard');
                     }
 
                 }, function(rejected) {
@@ -26,9 +26,15 @@ function LoginCtrl($scope, $rootScope, $state, loginService, localStorageService
         }
     };
     $scope.logout = function() {
-         localStorageService.clearAll();
-         $state.transitionTo('login');
+        localStorageService.clearAll();
+        $state.transitionTo('login');
     };
 
-}
+    $scope.$on('event:google-plus-signin-success', function(event, authResult) {
+        console.log(event)
+        console.log(authResult)
+        console.log("Success");
+        // Send login to server or save into cookie
+    });
 
+}

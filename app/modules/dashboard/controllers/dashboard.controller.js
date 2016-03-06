@@ -9,7 +9,10 @@ function dashboardCtrl($scope, $filter, $rootScope, dashboardDetails, NgTablePar
     $scope.userDetials = dashboardDetails.data.data.user;
     $scope.userOldHistory = dashboardDetails.data.data.userOldHistory;
     $scope.userTodayHistory = dashboardDetails.data.data.userTodayHistory.reverse();
-    $scope.firstLoggedInData = _.minBy(dashboardDetails.data.data.userTodayHistory, function(o) { return o.logTime; });
+    console.log($scope.userOldHistory)
+    $scope.firstLoggedInData = _.minBy(dashboardDetails.data.data.userTodayHistory, function(o) {
+        return o.logTime;
+    });
 
     $scope.searchFilter = {
         search: ''
@@ -33,19 +36,26 @@ function dashboardCtrl($scope, $filter, $rootScope, dashboardDetails, NgTablePar
 
     }
 
-    // $scope.tableParams = new NgTableParams({
-    //     page: 1,
-    //     count: 14,
-    //     filter: $scope.searchFilter
-    // }, {
-    //     total: $scope.dashboardDetails.length,
-    //     getData: function($defer, params) {
+    $scope.getTimeDiffernce = function(start, end) {
+        //return moment.utc(moment(end).diff(moment(start))).format("mm")
+        var time = (end - start) / (60 * 1000);
 
-    //         $scope.data = params.sorting() ? $filter('orderBy')($scope.dashboardDetails, params.orderBy()) : $scope.employeesDetials;
-    //         $scope.data = params.filter() ? $filter('filter')($scope.data, params.filter().search) : $scope.data;
-    //         params.total($scope.data.length);
-    //         $scope.data = $scope.data.slice((params.page() - 1) * params.count(), params.page() * params.count());
-    //         $defer.resolve($scope.data);
-    //     }
-    // });
+        if (time < 60) {
+            return (time + ' min');
+        } else {
+            time = ((time/60));
+            return (Math.round(time * 100) / 100 + ' hrs');
+        }
+
+
+    }
+
+    $scope.tableParams = new NgTableParams({}, {
+        counts: [],
+        getData: function($defer, params) {
+
+            $scope.data = params.sorting() ? $filter('orderBy')($scope.userOldHistory, params.orderBy()) : $scope.userOldHistory;
+            $defer.resolve($scope.data);
+        }
+    });
 }

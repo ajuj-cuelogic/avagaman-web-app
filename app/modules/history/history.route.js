@@ -15,8 +15,9 @@ function stateProvider($stateProvider) {
                 }
             },
             resolve: {
-                previousHistory: function(historyService) {
-                    return historyService.getUserPeriviousHistory();
+                previousHistory: function(historyService, localStorageService) {
+                    var username = localStorageService.get('__u')
+                    return historyService.getUserPeriviousHistory({'username': username});
                 }
             }
         });

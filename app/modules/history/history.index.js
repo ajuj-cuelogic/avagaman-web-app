@@ -1,1 +1,1 @@
-angular.module('history', ['historyService']);
+angular.module('history', ['historyService', 'localStorageService']);

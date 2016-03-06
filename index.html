@@ -36,6 +36,8 @@
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="bower_components/ng-lodash/build/ng-lodash.js"></script>
     <script src="bower_components/ng-table/dist/ng-table.js"></script>
+    <script src="bower_components/angular-directive.g-signin/google-plus-signin.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
     <script src="app/assets/js/custom.js"></script>
 
     <!-- Load providers before services -->
@@ -65,6 +67,7 @@
     <script src="app/modules/registration/registration.index.js"></script>
     <script src="app/modules/registration/controllers/registration.controller.js"></script>
     <script src="app/modules/registration/registration.route.js"></script>
+    <script ng-if="add" src="app/modules/registration/views/registration.formvalidation.js"></script>
 
     <!-- Login module-->
     <script src="app/modules/login/login.index.js"></script>
