@@ -1,10 +1,9 @@
 <div class="login-box" style="border:1px solid #D3D3D3;">
-    <div class="login-logo">
-        <a><b>Avagaman</b></a>
+    <div class="login-logo app-logo">
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-        <p class="login-box-msg">Sign in to start your session</p>
+        <p class="login-box-msg" style="font-size: 20px;">Login</p>
         <form name="loginForm" ng-submit="login()" novalidate>
             <div class="form-group has-feedback" ng-class="{ 'has-error' : loginForm.username.$invalid && loginForm.username.$dirty }">
                 <input type="email" class="form-control" placeholder="Email" name="username" ng-model="credentials.username" required autofocus>
@@ -20,6 +19,9 @@
                     <button type="submit" ng-disabled="loginForm.$invalid" class="btn btn-primary btn-block btn-flat">Sign In</button>
                 </div>
                 <!-- /.col -->
+            </div>
+            <div class="form-group" >
+                Not Registered? Please <a href="#/registration">Sign Up</a>                 
             </div>
         </form>
       
