@@ -16,6 +16,8 @@ function LoginCtrl($scope, $rootScope, $state, loginService, localStorageService
                         localStorageService.set('__i', response.data.data._id);
                         localStorageService.set('__u', response.data.data.user.username);
                         localStorageService.set('__l', response.data.data.user.logState);
+                        $rootScope.fullname = response.data.data.user.firstName+" "+response.data.data.user.lastName;
+
                         $state.transitionTo('base.dashboard');
                     }
 
