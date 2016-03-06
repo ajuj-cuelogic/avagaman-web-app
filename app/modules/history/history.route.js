@@ -17,7 +17,7 @@ function stateProvider($stateProvider) {
             resolve: {
                 previousHistory: function(historyService, localStorageService) {
                     var username = localStorageService.get('__u')
-                    return historyService.getUserPeriviousHistory({'username': username});
+                    return historyService.getUserPreviousHistory({'username': username});
                 }
             }
         });

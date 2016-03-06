@@ -6,12 +6,12 @@ angular.module('historyService', ['providers'])
 function historyService($http, config) {
 
     var historyService = {
-        getUserPeriviousHistory: getUserPeriviousHistory,
+        getUserPreviousHistory: getUserPreviousHistory,
     };
 
     return historyService;
 
-    function getUserPeriviousHistory(username) {
+    function getUserPreviousHistory(username) {
 
         return $http({
             method: "POST",

@@ -1,10 +1,8 @@
 
 <div class="login-box" style="border:1px solid #D3D3D3;">
-    <div class="login-logo">
-        <a><b>Avagaman</b></a>
-    </div>
+    <div class="login-logo app-logo"></div>
     <div class="login-box-body">
-        <p class="login-box-msg">Registeration</p>
+        <p class="login-box-msg" style="font-size: 20px;">Registration</p>
         <form name="registrationForm" id="registrationForm" ng-submit="registration()" novalidate>
             <div  class="form-group has-feedback" ng-class="{ 'has-error' : registrationForm.firstName.$invalid && registrationForm.firstName.$dirty }">
                       <label>Firstname</label>
