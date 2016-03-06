@@ -10,14 +10,14 @@
         </section>
         <!-- Main content -->
         <section class="content">
-            <div class="box-tools pull-right form-group">
+            <div class="box-tools text-center form-group" ng-if="!previousHistory.length">
                 <div class="has-feedback">
                     <!-- <input type="text" ng-model="searchFilter.search" class="form-control input-sm" placeholder="Search..."> -->
-
+                    You dont have history records!!
                 </div>
             </div>
             <!-- /.box-tools -->
-            <table ng-table="tableParams" class="table table-condensed table-bordered table-striped" show-filter="true">
+            <table ng-if="previousHistory.length" ng-table="tableParams" class="table table-condensed table-bordered table-striped" show-filter="true">
                 <tr ng-repeat="history in $data">
                     <td class="text-center" data-title="'Date'" sortable="'checkedInTime'">{{history.checkedInTime | date:"MM-dd-yyyy"}}</td>
                     <td class="text-center" data-title="'Checked In Time'" sortable="'checkedInTime'">{{history.checkedInTime | date: 'shortTime'}}</td>

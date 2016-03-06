@@ -42,7 +42,10 @@
                             <i class="fa fa-list-alt"></i>
                             <h3 class="box-title">Today's History</h3>
                         </div>
-                        <ul class="list-group today-history-box">
+                        <ul class="text-center list-group today-history-box">
+                            <div ng-if="!userTodayHistory.length">
+                                You don't history for today please checkin!!
+                            </div>
                             <li class="list-group-item " ng-repeat="history in userTodayHistory">
                                 <img ng-src="app/assets/images/{{ (history.logState ? 'green-arrow.png' : 'red-arrow.png') }}" alt="user image" class="arrow-size offline">{{(history.logState ? 'Check-In': 'Check-Out')}} at {{history.logTime | date : 'shortTime' }}
                             </li>
@@ -64,7 +67,10 @@
                             <h3 class="box-title">Week's History</h3>
                         </div>
                         <div class="box-body chat" id="chat-box">
-                            <table ng-table="tableParams" class="table table-condensed table-bordered table-striped" show-filter="true">
+                            <div class="text-center" ng-if="!userOldHistory.length">
+                                You don't history for previous weeks!!
+                            </div>
+                            <table ng-if="userOldHistory.length" ng-table="tableParams" class="table table-condensed table-bordered table-striped" show-filter="true">
                                 <tr ng-repeat="history in $data">
                                     <td class="text-center" data-title="'Date'" sortable="'checkedInTime'">{{history.checkedInTime | date:"MM-dd-yyyy"}}</td>
                                     <td class="text-center" data-title="'Checked In Time'" sortable="'checkedInTime'">{{history.checkedInTime | date: 'shortTime'}}</td>
