@@ -1,0 +1,50 @@
+<div class="wrapper">
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+            Notification
+            <small>Control panel</small>
+          </h1>
+            <ol class="breadcrumb">
+                <li><a href=""><i class="fa fa-bell"></i> Notification</a></li>
+            </ol>
+        </section>
+        <!-- Main content -->
+        <section class="content">
+            <!-- Small boxes (Stat box) -->
+            <div class="row">
+                <div class="col-lg-8 col-xs-6">
+                    <div class="box box-success">
+                        <div class="box-header">
+                            <i class="fa fa-bell"></i>
+                            <h3 class="box-title">Notifications</h3>
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item " ng-repeat="notification in userNotifications">
+                                <div class="box-comment">
+                                    <!-- User image -->
+                                    <img  alt="notify-image user image" src="app/assets/images/user.png" class="img-circle img-sm">
+                                    <div class="comment-text">
+                                        <span class="username" style="margin-left: 10px">
+                       {{notification.userId.firstName}} {{notification.userId.lastName}}
+                        <span class="text-muted pull-right">{{notification.createdTime | date: 'short'}}</span>
+                                        </span>
+                                        <!-- /.username -->
+                                        <div class="notify-image">{{notification.logMessage}}</div>
+                                    </div>
+                                    <!-- /.comment-text -->
+                                </div>
+                            </li>
+                        </ul>
+                        <!-- /.chat -->
+                    </div>
+                </div>
+                <!-- ./col -->
+            </div>
+            <!-- /.row -->
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+</div>
